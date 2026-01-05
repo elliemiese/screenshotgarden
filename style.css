@@ -89,8 +89,8 @@ body {
 }
 
 .item p {
-font-family: "Lekton", monospace;
-  color: #cccccc;
+  font-family: "Lekton", monospace;
+  color: #000000;
   text-align: center;
   margin: 0.3rem 0 0;
   font-size: 0.9rem;
@@ -148,7 +148,7 @@ font-family: "Lekton", monospace;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -160,7 +160,7 @@ font-family: "Lekton", monospace;
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #56bc8a #f0f0f0;
+  scrollbar-color: #56bc8a #ffffff;
 }
 
 
@@ -173,9 +173,13 @@ font-family: "Lekton", monospace;
   .sidebar {
     width: 100%;
     height: auto;
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #ffffff;
     border-right: none;
-    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0.75rem;
   }
 
   .gallery {
