@@ -1,5 +1,5 @@
 fetch('screenshots.json')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(images => {
     const gallery = document.getElementById('gallery');
 
