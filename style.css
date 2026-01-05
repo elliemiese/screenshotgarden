@@ -172,22 +172,22 @@ body {
 
   .sidebar {
     width: 100%;
-    height: fit-content;
-    max-height: none;
-    position: sticky;
+    height: auto;
+    position: fixed;
     top: 0;
-    z-index: 999;
+    left: 0;
+    z-index: 1000;
     background: #ffffff;
     border-right: none;
     border-bottom: 1px solid #eee;
     padding: 1rem 0.75rem;
-    overflow: visible;
   }
 
   .gallery {
     column-width: 100%;
     column-gap: 0;
     padding: 1rem 0.5rem;
+    margin-top: 220px;
   }
 
   .item {
