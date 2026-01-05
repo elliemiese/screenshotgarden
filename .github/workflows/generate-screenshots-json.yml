@@ -8,9 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # Step 1: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}  # use your PAT here
 
+      # Step 2: Generate screenshots.json
       - name: Generate screenshots.json
         run: |
           echo "[" > screenshots.json
@@ -26,12 +30,14 @@ jobs:
           done
           echo "]" >> screenshots.json
 
-      - name: Commit and push screenshots.json
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add screenshots.json
-          git commit -m "Auto-update screenshots.json" || echo "No changes"
-          git push https://$PAT@github.com/${{ github.repository }} HEAD:main
+      # Step 3: Commit and push automatically
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: Auto-update screenshots.json
+          add: "screenshots.json"
+          branch: main
         env:
-          PAT: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
