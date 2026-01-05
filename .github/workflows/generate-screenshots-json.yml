@@ -10,19 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
       - name: Generate screenshots.json
         run: |
           echo "[" > screenshots.json
-          files=$(ls screenshots | sed 's/.*/"screenshots\/&"/')
-          echo "$files" | paste -sd, - >> screenshots.json
+          first=true
+          for f in screenshots/*; do
+            if [ "$first" = true ]; then
+              first=false
+            else
+              echo "," >> screenshots.json
+            fi
+            # Escape double quotes in filename
+            filename=$(basename "$f" | sed 's/"/\\"/g')
+            echo "  \"screenshots/$filename\"" >> screenshots.json
+          done
           echo "]" >> screenshots.json
 
-      - name: Commit screenshots.json
+      - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add screenshots.json
           git commit -m "Auto-update screenshots.json" || echo "No changes"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
