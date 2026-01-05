@@ -3,7 +3,8 @@ fetch('screenshots.json')
   .then(images => {
     const gallery = document.getElementById('gallery');
 
-    images.forEach(path => {
+    // Reverse the array so newest images appear first
+    images.reverse().forEach(path => {
       const filenameWithExt = path.split('/').pop();
       const filename = filenameWithExt.replace(/\.[^/.]+$/, '');
 
