@@ -1,0 +1,31 @@
+body {
+  background: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px;
+}
+
+img {
+  max-width: 200px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
