@@ -78,10 +78,14 @@ body {
   width: 100%;
   border-radius: 8px;
   display: block;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  opacity: 1;
 }
 
 .item:hover {
   transform: scale(1.02);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  opacity: 0.9;
 }
 
 .item p {
@@ -120,4 +124,69 @@ font-family: "Lekton", monospace;
   color: white;
   cursor: pointer;
   font-weight: bold;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #ff66c4;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.2);
+}
+
+
+/* Custom scrollbar for Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #56bc8a;
+  border-radius: 6px;
+  border: 3px solid #f0f0f0;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #56bc8a #f0f0f0;
+}
+
+
+/* Responsive layout for mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    padding: 1rem 0.5rem;
+  }
+
+  .gallery {
+    column-width: 100%;
+    column-gap: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  .item {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
