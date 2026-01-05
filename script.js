@@ -1,11 +1,17 @@
-const gallery = document.getElementById('gallery');
+fetch('screenshots/')
+  .then(response => response.text())
+  .then(html => {
+    const gallery = document.getElementById('gallery');
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const links = doc.querySelectorAll('a');
 
-// Adjust totalImages to your max screenshots (optional)
-const totalImages = 100;
-
-for (let i = 1; i <= totalImages; i++) {
-  const img = document.createElement('img');
-  img.src = `screenshots/screenshot${i}.png`; // change extension if needed
-  img.onerror = () => img.remove(); // remove broken images
-  gallery.appendChild(img);
-}
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href.match(/\.(png|jpg|jpeg|gif|webp)$/i)) {
+        const img = document.createElement('img');
+        img.src = `screenshots/${href}`;
+        gallery.appendChild(img);
+      }
+    });
+  });
