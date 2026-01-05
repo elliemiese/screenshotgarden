@@ -166,30 +166,35 @@ body {
 
 /* Responsive layout for mobile */
 @media screen and (max-width: 768px) {
+  /* Stack container vertically */
   .container {
-    flex-direction: column;
+    display: block;
   }
 
+  /* Sidebar as fixed header */
   .sidebar {
-    width: 100%;
-    height: auto;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-right: none;
-    border-bottom: 1px solid #eee;
+    width: 100vw;
+    min-width: 0;
+    height: auto;
     padding: 1rem 0.75rem;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
   }
 
+  /* Gallery below the header */
   .gallery {
+    width: 100%;
     column-width: 100%;
     column-gap: 0;
     padding: 1rem 0.5rem;
-    margin-top: 220px;
+    margin-top: 220px; /* adjust to header height */
   }
 
+  /* Gallery items full width */
   .item {
     display: block;
     width: 100%;
