@@ -171,11 +171,9 @@ body {
     display: block;
   }
 
-  /* Sidebar as static block above gallery */
+  /* Sidebar on top */
   .sidebar {
     position: static;
-    top: auto;
-    left: auto;
     width: 100%;
     min-width: 0;
     height: auto;
@@ -185,20 +183,13 @@ body {
     z-index: auto;
   }
 
-  /* Gallery below the header */
+  /* Gallery directly below sidebar */
   .gallery {
-    flex: none;
+    display: block;
     width: 100%;
     column-width: 100%;
     column-gap: 0;
     padding: 1rem 0.5rem;
     margin-top: 0;
-  }
-
-  /* Gallery items full width */
-  .item {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
   }
 }
