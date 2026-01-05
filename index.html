@@ -6,8 +6,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Screenshot Garden</h1>
-  <div id="gallery"></div>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Screenshot Garden</h1>
+      <p class="description">
+        Welcome to my garden of screenshots 🌿✨. Each screenshot is a petal, a leaf, or sometimes a rogue bug 🐞💻 that I plucked from the wild internet. Sit awhile, scroll, and maybe you’ll find something blooming just for you 🌸🪴.
+      </p>
+      <marquee behavior="scroll" direction="left" class="marquee">🌼🌱🌸🌿💐🌻🪴</marquee>
+      <div class="links">
+        <a href="#">Ellie S.</a>
+        <a href="http://instagram.com/ellie.ofthevalley">Instagram</a>
+        <a href="mailto:im@notspiral.ing">Contact</a>
+      </div>
+    </aside>
+
+    <!-- Main gallery -->
+    <main class="gallery" id="gallery">
+      <!-- JS will populate images here -->
+    </main>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <span id="lightbox-close">&times;</span>
+  </div>
 
   <script src="script.js"></script>
 </body>
