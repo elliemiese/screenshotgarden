@@ -1,4 +1,4 @@
-name: Generate screenshots.json
+name: Auto-generate screenshots.json
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "screenshots/**"
 
 jobs:
-  build:
+  generate-json:
     runs-on: ubuntu-latest
 
     steps:
