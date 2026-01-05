@@ -2,7 +2,7 @@
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
-  background: #fdfdfd;
+  background: #ffffff;
   color: #333;
 }
 
@@ -14,10 +14,10 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 20%;
+  width: 10%;
+  min-width: 250px;
   padding: 2rem;
   background: #fff;
-  border-right: 2px solid #eee;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -25,14 +25,17 @@ body {
 }
 
 .sidebar h1 {
-  font-family: "Arial", sans-serif;
+  font-family: "Times New Roman", serif;
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2b7a0b; /* vibrant green */
+  font-weight: normal;
+  margin-bottom: 2rem;
+  color: #56bc8a; /* vibrant green */
+  line-height: 0.7;
+  text-transform: uppercase;
 }
 
 .sidebar .description {
-  font-size: 1rem;
+  font-size: 12px;
   line-height: 1.5;
   margin-bottom: 2rem;
 }
@@ -40,19 +43,19 @@ body {
 .sidebar .links a {
   display: block;
   margin: 0.5rem 0;
-  color: #1e5cb3; /* vibrant blue */
+  color: #ff66c4; /* vibrant pink */
   text-decoration: none;
   font-family: sans-serif;
 }
 
 .sidebar .links a:hover {
-  color: #f95c9b; /* vibrant pink */
+  color: #759e6f; /* Gray green */
 }
 
 .marquee {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #f9d030; /* vibrant yellow */
+  color: #000000;
 }
 
 /* Gallery (masonry) */
@@ -82,7 +85,8 @@ body {
 }
 
 .item p {
-  font-family: sans-serif;
+font-family: "Lekton", monospace;
+  color: #cccccc;
   text-align: center;
   margin: 0.3rem 0 0;
   font-size: 0.9rem;
