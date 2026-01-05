@@ -171,18 +171,18 @@ body {
     display: block;
   }
 
-  /* Sidebar as fixed header */
+  /* Sidebar as static block above gallery */
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
     min-width: 0;
     height: auto;
     padding: 1rem 0.75rem;
     background: #ffffff;
     border-bottom: 1px solid #eee;
-    z-index: 1000;
+    z-index: auto;
   }
 
   /* Gallery below the header */
