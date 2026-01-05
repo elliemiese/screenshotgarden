@@ -187,11 +187,12 @@ body {
 
   /* Gallery below the header */
   .gallery {
+    flex: none;
     width: 100%;
     column-width: 100%;
     column-gap: 0;
     padding: 1rem 0.5rem;
-    margin-top: 220px; /* adjust to header height */
+    margin-top: 0;
   }
 
   /* Gallery items full width */
