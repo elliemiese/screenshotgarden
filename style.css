@@ -91,6 +91,7 @@ body {
 .item p {
   font-family: "Lekton", monospace;
   text-transform: uppercase;
+  font-weight: bold;
   color: #000000;
   text-align: center;
   margin: 0.3rem 0 0;
