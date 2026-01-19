@@ -167,8 +167,8 @@ body {
 
 
 /* Responsive layout for mobile */
-@media screen and (max-width: 768px) {
-  /* Stack container vertically */
+@media (max-width: 768px) {
+
   .container {
     display: block;
   }
