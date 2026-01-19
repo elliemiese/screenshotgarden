@@ -175,14 +175,16 @@ body {
 
   /* Sidebar on top */
   .sidebar {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     min-width: 0;
     height: auto;
-    padding: 1rem 0.75rem;
+    padding: 1rem 2rem;
     background: #ffffff;
     border-bottom: 1px solid #eee;
-    z-index: auto;
+    z-index: 1000;
   }
 
   /* Gallery directly below sidebar */
@@ -192,6 +194,6 @@ body {
     column-width: 100%;
     column-gap: 0;
     padding: 1rem 0.5rem;
-    margin-top: 0;
+    margin-top: 200px;
   }
 }
